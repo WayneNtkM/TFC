@@ -15,4 +15,9 @@ export default class Login {
 
     return res.status(status).json({ token });
   };
+
+  public validate: RequestHandler = async (req, res) => {
+    const { role } = await this._service.findOne(req.body.user);
+    return res.status(200).json({ role });
+  };
 }
