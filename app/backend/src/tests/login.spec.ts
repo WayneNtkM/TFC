@@ -54,4 +54,24 @@ describe('Test Login integration', () => {
     expect(response.status).to.be.equal(401);
     expect(response.body).to.be.deep.equal({ message: 'Incorrect email or password' });
   });
+  it('Should return an error - user did not provide email', async () => {
+    const response = await chai
+      .request(app)
+      .post('/login')
+      .send({ password: '26toneladas' });
+      
+      
+    expect(response.status).to.be.equal(400);
+    expect(response.body).to.be.deep.equal({ message: 'All fields must be filled' });
+  });
+  it('Should return an error - user did not provide password', async () => {
+    const response = await chai
+      .request(app)
+      .post('/login')
+      .send({ email: 'ofamoso16ton@famoso.com' });
+      
+      
+    expect(response.status).to.be.equal(400);
+    expect(response.body).to.be.deep.equal({ message: 'All fields must be filled' });
+  });
 });
