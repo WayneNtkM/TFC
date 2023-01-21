@@ -19,4 +19,10 @@ export default class Login {
     const token = this._jwt.createToken({ email, password: hash });
     return { token, isError: false, status: 200 };
   }
+
+  public async findOne(user: IUser) {
+    const response = await this._model
+      .findOne({ where: { email: user.email } }) as { role: string };
+    return { role: response.role };
+  }
 }
