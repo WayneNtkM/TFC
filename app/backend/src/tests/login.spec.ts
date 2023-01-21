@@ -5,7 +5,7 @@ import chaiHttp = require('chai-http');
 
 import { app } from '../app';
 import User from '../database/models/User';
-import { user } from './mocks/Login';
+import { token, user } from './mocks/Login';
 import * as jwt from 'jsonwebtoken';
 import { IJWTLogin } from '../interfaces/Login';
 
@@ -73,5 +73,17 @@ describe('Test Login integration', () => {
       
     expect(response.status).to.be.equal(400);
     expect(response.body).to.be.deep.equal({ message: 'All fields must be filled' });
+  });
+  it('Should return user role', async () => {
+    sinon.stub(User, 'findOne').resolves({ role: user.role } as any);
+
+    const response = await chai
+      .request(app)
+      .get('/login/validate')
+      .set('Authorization', token);
+      
+    expect(response.status).to.be.equal(200);
+    expect(response.body).not.to.be.deep.equal({ role: 'admin' });
+    expect(response.body).to.be.deep.equal({ role: 'user' });
   });
 });
