@@ -5,8 +5,9 @@ import UserModel from '../database/models/User';
 import { IUser } from '../interfaces/Login';
 
 export default class Login {
-  constructor(private _model = UserModel) {}
   private _jwt = new JWT();
+
+  constructor(private _model = UserModel) {}
 
   public async post({ email, password }: IUser) {
     const user = await this._model.findOne({ where: { email } });
