@@ -10,11 +10,15 @@ const auth: RequestHandler = (req, res, next) => {
     return res.status(400).json({ message: 'Token not found' });
   }
 
-  const decoded = jwt.verify(authorization);
+  try {
+    const decoded = jwt.verify(authorization);
 
-  req.body.user = decoded;
+    req.body.user = decoded;
 
-  return next();
+    return next();
+  } catch (error) {
+    return res.status(401).json({ message: 'Token must be a valid token' });
+  }
 };
 
 export default auth;
