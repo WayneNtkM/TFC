@@ -4,6 +4,11 @@ import db from '.';
 class Teams extends Model {
   declare id: number;
   declare name: string;
+  declare teamName: string;
+  declare matches: {
+    homeTeamGoals: number;
+    awayTeamGoals: number;
+  }[];
 }
 
 export default Teams.init({
