@@ -7,6 +7,7 @@ const controller = new MatchesController();
 
 router.post('/', auth, controller.postMatch.bind(controller));
 router.patch('/:id/finish', controller.setProgress.bind(controller));
+router.patch('/:id', controller.patchMatch.bind(controller));
 router.get('/', controller.getMacthes.bind(controller));
 
 export default router;

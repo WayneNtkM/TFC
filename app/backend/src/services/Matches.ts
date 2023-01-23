@@ -1,5 +1,5 @@
 import { Op } from 'sequelize';
-import { IMatchBody } from '../interfaces/Matches';
+import { IMatch, IMatchBody } from '../interfaces/Matches';
 import MatchesModel from '../database/models/Matches';
 import TeamsModel from '../database/models/Teams';
 
@@ -45,5 +45,12 @@ export default class Matches {
       where: { id },
     });
     return { message: 'Finished', status: 200 };
+  }
+
+  public async patchMatch(id: string, { homeTeamGoals, awayTeamGoals }: IMatch) {
+    await this._model.update({ homeTeamGoals, awayTeamGoals }, {
+      where: { id },
+    });
+    return { message: 'Updated' };
   }
 }
