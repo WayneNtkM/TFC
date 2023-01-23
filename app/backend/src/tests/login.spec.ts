@@ -86,4 +86,14 @@ describe('Test Login integration', () => {
     expect(response.body).not.to.be.deep.equal({ role: 'admin' });
     expect(response.body).to.be.deep.equal({ role: 'user' });
   });
+  it('Should return an error - token not found', async () => {
+    sinon.stub(User, 'findOne').resolves({ role: user.role } as any);
+
+    const response = await chai
+      .request(app)
+      .get('/login/validate');
+      
+    expect(response.status).to.be.equal(400);
+    expect(response.body).to.be.deep.equal({ message: 'Token not found' });
+  });
 });
