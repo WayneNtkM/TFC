@@ -28,4 +28,11 @@ export default class Matches {
     const { message, status } = await this._service.setProgress(id);
     return res.status(status).json({ message });
   };
+
+  public patchMatch: RequestHandler = async (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const { message } = await this._service.patchMatch(id, body);
+    return res.status(200).json({ message });
+  };
 }
