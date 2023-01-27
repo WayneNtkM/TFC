@@ -42,7 +42,8 @@ Tecnologias divididas por arquivos.
 ### Linter
 - [ESlint](https://eslint.org/)
 
-## Getting Started
+<details>
+<sumary><h1>Getting Started</ h1></sumary>
 
 Primeiramente, clone o repositório:
 
@@ -65,6 +66,8 @@ Instale as dempendências necessárias e suba a aplicação
     
 
 Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
+    
+</details>
 
 <details>
 <summary><h1>🐳 Rodando com o Docker</h1></summary><br />
