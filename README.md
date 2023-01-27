@@ -3,7 +3,7 @@
 Projeto fullstack Dockerizado realizado durante o curso da [Trybe](https://www.betrybe.com). Backend desenvolvido por mim e previmante Frntend pronto.
 fora adicionado, ao frontend, páginas responsivas para aparelhos com tela de até 500px, por ora (ainda em desenvolvimento).
 
-## Objective
+## Objetivo
 
 É possível ao usuário fazer login, verificar as partidas e a classificação dos times. Além de ser possivél adicionar, terminar e modificar o placar de partidas.
 
@@ -20,7 +20,6 @@ fora adicionado, ao frontend, páginas responsivas para aparelhos com tela de at
     <img src='https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white' alt='ESlint' />
     <img src='https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white' alt='CSS' />
     <img src='https://img.shields.io/badge/json%20web%20tokens-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink' alt='JWT' />
-    <img src='https://img.shields.io/badge/json%20web%20tokens-323330?style=for-the-badge&logo=json-web-tokens&logoColor=pink' alt='Docker' />
 </div>
 
 <br />
@@ -43,7 +42,7 @@ Tecnologias divididas por arquivos.
 - [ESlint](https://eslint.org/)
 
 <details>
-<summary><h1>Getting Started</h1></summary><br />
+<summary><h2>Getting Started</h2></summary><br />
 
 Primeiramente, clone o repositório:
 
@@ -70,7 +69,7 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
 </details>
 
 <details>
-<summary><h1>🐳 Rodando com o Docker</h1></summary><br />
+<summary><h2>🐳 Rodando com o Docker</h2></summary><br />
 
   ### Docker e Docker-compose
 
@@ -87,4 +86,4 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
 
 ---
 
-Desenvolvido por [Wayne Takahashi](https://www.linkedin.com/in/wayne-takahashi/), © 2022.
+Desenvolvido por [Wayne Takahashi](https://www.linkedin.com/in/wayne-takahashi/), © 2023.
