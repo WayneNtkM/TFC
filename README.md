@@ -77,13 +77,8 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
 ⚠️ **Após clonar o repositório**
     
     ```bash
-    npm i
-    ## backend start
-    cd app/backend
-    npm run dev
-    ## frontend start
-    cd app/frontend
-    npm start
+    cd TFC
+    npm run compose:up
     ```
     
 </details>
