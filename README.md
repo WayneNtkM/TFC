@@ -54,7 +54,7 @@ Então, entre no diretório raiz:
 
 Instale as dempendências necessárias e suba a aplicação
 
-    ```bash
+    
     npm i
     ## backend start
     cd app/backend
@@ -62,7 +62,7 @@ Instale as dempendências necessárias e suba a aplicação
     ## frontend start
     cd app/frontend
     npm start
-    ```
+    
 
 Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
 
@@ -76,10 +76,9 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
 
 ⚠️ **Após clonar o repositório**
     
-    ```bash
     cd TFC
-    npm run compose:up
-    ```
+    npm run compose:up ** comando responsável pelo build das imagens
+
     
 </details>
 
