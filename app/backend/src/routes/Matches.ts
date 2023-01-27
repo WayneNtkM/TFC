@@ -3,11 +3,10 @@ import auth from '../middleware/Auth';
 import MatchesController from '../controllers/Matches';
 
 const router = Router();
-const controller = new MatchesController();
 
-router.post('/', auth, controller.postMatch.bind(controller));
-router.patch('/:id/finish', controller.setProgress.bind(controller));
-router.patch('/:id', controller.patchMatch.bind(controller));
-router.get('/', controller.getMacthes.bind(controller));
+router.post('/', auth, MatchesController.postMatch);
+router.patch('/:id/finish', MatchesController.setProgress);
+router.patch('/:id', MatchesController.patchMatch);
+router.get('/', MatchesController.getMacthes);
 
 export default router;

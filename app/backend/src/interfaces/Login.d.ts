@@ -1,4 +1,10 @@
 export interface IUser {
+  id: number;
+  email: string;
+  role: string;
+}
+
+export interface IUserBody {
   email: string;
   password: string;
 }

@@ -4,22 +4,15 @@ import MatchesModel from '../database/models/Matches';
 import TeamsModel from '../database/models/Teams';
 
 export default class Matches {
-  constructor(private _model = MatchesModel) {}
-
-  public async getMatches(inProgress: string) {
+  public static async getMatches(inProgress: string) {
     const where = inProgress ? { inProgress: inProgress === 'true' } : undefined;
 
-    const matches = await this._model.findAll({
-      where,
-      include: [
-        { model: TeamsModel, as: 'homeTeam', attributes: { exclude: ['id'] } },
-        { model: TeamsModel, as: 'awayTeam', attributes: { exclude: ['id'] } },
-      ],
-    });
+    const matches = await MatchesModel.getAllMatches(where);
     return matches;
   }
 
-  public async postMatch({ awayTeamId, homeTeamGoals, homeTeamId, awayTeamGoals }: IMatchBody) {
+  public static async postMatch({ awayTeamId,
+    homeTeamGoals, homeTeamId, awayTeamGoals }: IMatchBody) {
     if (homeTeamId === awayTeamId) {
       return { isError: true,
         message: 'It is not possible to create a match with two equal teams',
@@ -35,20 +28,20 @@ export default class Matches {
         status: 404 };
     }
 
-    const match = await this._model
+    const match = await MatchesModel
       .create({ awayTeamGoals, awayTeamId, homeTeamGoals, homeTeamId, inProgress: true });
     return { data: match, isError: false, status: 201 };
   }
 
-  public async setProgress(id: string) {
-    await this._model.update({ inProgress: false }, {
+  public static async setProgress(id: string) {
+    await MatchesModel.update({ inProgress: false }, {
       where: { id },
     });
     return { message: 'Finished', status: 200 };
   }
 
-  public async patchMatch(id: string, { homeTeamGoals, awayTeamGoals }: IMatch) {
-    await this._model.update({ homeTeamGoals, awayTeamGoals }, {
+  public static async patchMatch(id: string, { homeTeamGoals, awayTeamGoals }: IMatch) {
+    await MatchesModel.update({ homeTeamGoals, awayTeamGoals }, {
       where: { id },
     });
     return { message: 'Updated' };

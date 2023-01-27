@@ -1,57 +1,32 @@
-import leaderboards from '../utils/leaderboards';
-import { IAwayMathes } from '../interfaces/Matches';
-import MatchesModel from '../database/models/Matches';
+import Leaderboard from '../utils/Leaderboard';
 import TeamsModel from '../database/models/Teams';
+import { ITeam } from '../interfaces/Leaderboards';
 
 export default class Leaderboards {
-  constructor(
-    private _matches = MatchesModel,
-    private _teams = TeamsModel,
-  ) {}
-
-  public async getLeaderboardsHome() {
-    const matches = await this._teams.findAll({
-      include: [
-        { model: this._matches,
-          as: 'matches',
-          attributes: { exclude: ['id'] },
-          where: { inProgress: false } },
-      ],
-    });
-
-    const home = leaderboards.home(matches);
-
-    return home;
-  }
-
-  public async getLeaderboardsAway() {
-    const matches = await this._teams.findAll({
-      include: [
-        { model: this._matches,
-          as: 'matchesAway',
-          attributes: { exclude: ['id'] },
-          where: { inProgress: false } },
-      ],
-    }) as unknown as IAwayMathes[];
-
-    const away = leaderboards.away(matches);
-
-    return away;
-  }
-
-  public async getLeaderboards() {
-    const leaderboardHome = await this.getLeaderboardsHome();
-    const leaderboardAway = await this.getLeaderboardsAway();
-
-    const leaderboard = leaderboards.create(leaderboardHome, leaderboardAway);
-
-    return leaderboard.sort((a, b) => {
-      if (!a || !b) return -1;
-      return b.totalPoints - a.totalPoints
+  public static async generateLeaderboard(matches: ITeam[]) {
+    return matches.map((team) => new Leaderboard(team))
+      .sort((a, b) => b.totalPoints - a.totalPoints
       || b.totalVictories - a.totalVictories
       || b.goalsBalance - a.goalsBalance
       || b.goalsFavor - a.goalsFavor
-      || b.goalsOwn - a.goalsOwn;
-    });
+      || b.goalsOwn - a.goalsOwn);
+  }
+
+  public static async getLeaderboardsHome() {
+    const matches = await TeamsModel.getAllHomeMacthes();
+    const home = Leaderboards.generateLeaderboard(matches);
+    return home;
+  }
+
+  public static async getLeaderboardsAway() {
+    const matches = await TeamsModel.getAllAwayMacthes();
+    const away = Leaderboards.generateLeaderboard(matches);
+    return away;
+  }
+
+  public static async getLeaderboards() {
+    const matches = await TeamsModel.getAllMatches();
+    const leaderboard = Leaderboards.generateLeaderboard(matches);
+    return leaderboard;
   }
 }

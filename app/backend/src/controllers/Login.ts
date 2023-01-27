@@ -17,7 +17,7 @@ export default class Login {
   };
 
   public validate: RequestHandler = async (req, res) => {
-    const { role } = await this._service.findOne(req.body.user);
+    const { role } = await LoginService.findOne(req.body.user);
     return res.status(200).json({ role });
   };
 }
