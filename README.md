@@ -43,7 +43,7 @@ Tecnologias divididas por arquivos.
 - [ESlint](https://eslint.org/)
 
 <details>
-<summary><h1>Getting Started</h1></summary>< /br>
+<summary><h1>Getting Started</h1></summary><br />
 
 Primeiramente, clone o repositório:
 
