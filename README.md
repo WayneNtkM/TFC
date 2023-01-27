@@ -75,11 +75,17 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
 [Veja aqui a documentação para atualizar o docker-compose.](https://docs.docker.com/compose/install/)
 
 ⚠️ **Após clonar o repositório**
+    
     ```bash
-    cd TFC
-    npm run compose:up ** comando responsável pelo build da imagem **
-    cd TFC
+    npm i
+    ## backend start
+    cd app/backend
+    npm run dev
+    ## frontend start
+    cd app/frontend
+    npm start
     ```
+    
 </details>
 
 ---
