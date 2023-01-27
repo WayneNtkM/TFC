@@ -74,10 +74,10 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
   ⚠ O seu docker-compose precisa estar na versão 1.29 ou superior.  ⚠
 [Veja aqui a documentação para atualizar o docker-compose.](https://docs.docker.com/compose/install/)
 
-⚠️ **Após clonar o repositório**
+**Após clonar o repositório**
     
     cd TFC
-    npm run compose:up ** comando responsável pelo build das imagens
+    npm run compose:up **comando responsável pelo build das imagens**
 
     
 </details>
