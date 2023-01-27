@@ -41,33 +41,7 @@ Tecnologias divididas por arquivos.
 ### Linter
 - [ESlint](https://eslint.org/)
 
-<details>
-<summary><h2>Getting Started</h2></summary><br />
 
-Primeiramente, clone o repositório:
-
-    git clone git@github.com:WayneNtkM/TFC.git
-
-Então, entre no diretório raiz:
-
-    cd TFC
-
-Instale as dempendências necessárias e suba a aplicação
-
-    
-    npm i
-    ## backend start
-    cd app/backend
-    npm run dev
-    ## frontend start
-    cd app/frontend
-    npm start
-    
-
-Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
-    
-</details>
-<details>
 <summary><h2>🐳 Rodando com o Docker</h2></summary><br />
 
   ### Docker e Docker-compose
@@ -75,12 +49,17 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
   ⚠ O seu docker-compose precisa estar na versão 1.29 ou superior.  ⚠
 [Veja aqui a documentação para atualizar o docker-compose.](https://docs.docker.com/compose/install/)
 
+Primeiramente, clone o repositório:
+
+    git clone git@github.com:WayneNtkM/TFC.git
+
 **Após clonar o repositório**
     
     cd TFC
     npm run compose:up **comando responsável pelo build das imagens**
 
-    
+
+    Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
 </details>
 
 # Prévia da aplicação
