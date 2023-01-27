@@ -67,7 +67,6 @@ Instale as dempendências necessárias e suba a aplicação
 Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
     
 </details>
-
 <details>
 <summary><h2>🐳 Rodando com o Docker</h2></summary><br />
 
@@ -83,6 +82,8 @@ Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver
 
     
 </details>
+
+# Prévia da aplicação
 
 ---
 
