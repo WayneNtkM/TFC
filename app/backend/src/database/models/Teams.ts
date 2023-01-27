@@ -9,6 +9,43 @@ class Teams extends Model {
     homeTeamGoals: number;
     awayTeamGoals: number;
   }[];
+
+  public static async getAllMatches() {
+    return Teams.findAll({
+      attributes: ['teamName'],
+      include: [{
+        association: 'matches',
+        attributes: ['awayTeamGoals', 'homeTeamGoals'],
+        where: { inProgress: false },
+      }, {
+        association: 'matchesAway',
+        attributes: ['awayTeamGoals', 'homeTeamGoals'],
+        where: { inProgress: false },
+      }],
+    }).then((res) => res.map((e) => e.get({ plain: true })));
+  }
+
+  public static async getAllHomeMacthes() {
+    return Teams.findAll({
+      attributes: ['teamName'],
+      include: [{
+        association: 'matches',
+        attributes: ['awayTeamGoals', 'homeTeamGoals'],
+        where: { inProgress: false },
+      }],
+    }).then((res) => res.map((e) => e.get({ plain: true })));
+  }
+
+  public static async getAllAwayMacthes() {
+    return Teams.findAll({
+      attributes: ['teamName'],
+      include: [{
+        association: 'matchesAway',
+        attributes: ['awayTeamGoals', 'homeTeamGoals'],
+        where: { inProgress: false },
+      }],
+    }).then((res) => res.map((e) => e.get({ plain: true })));
+  }
 }
 
 export default Teams.init({

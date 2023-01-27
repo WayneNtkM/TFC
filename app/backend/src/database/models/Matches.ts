@@ -4,6 +4,22 @@ import Teams from './Teams';
 
 class Matches extends Model {
   declare inProgress: boolean;
+
+  public static getAllMatches(where: { inProgress: boolean; } | undefined) {
+    return Matches.findAll({
+      where,
+      include: [
+        {
+          association: 'homeTeam',
+          attributes: ['teamName'],
+        },
+        {
+          association: 'awayTeam',
+          attributes: ['teamName'],
+        },
+      ],
+    });
+  }
 }
 
 export default Matches.init({
