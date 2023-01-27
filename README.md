@@ -67,7 +67,7 @@ Instale as dempendências necessárias e suba a aplicação
 Abra [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
 
 <details>
-<summary><strong>🐳 Rodando com o Docker</strong></summary><br />
+<summary><h1>🐳 Rodando com o Docker</h1></summary><br />
 
   ### Docker e Docker-compose
 
