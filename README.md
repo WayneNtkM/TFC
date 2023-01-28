@@ -1,7 +1,7 @@
 # TFC - Trybe Futebol Clube
 
 <p align='center'>
-    <img src='src/assets/to_readme/tfc.gif' />
+    <img src='assets/to_readme/tfc.gif' />
 </p>
 
 ## Descrição
