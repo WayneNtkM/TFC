@@ -1,5 +1,13 @@
 # TFC - Trybe Futebol Clube
 
+<p align='center'>
+    <img src='assets/to_readme/tfc.gif' />
+</p>
+
+---
+
+## Descrição
+
 Projeto fullstack Dockerizado realizado durante o curso da [Trybe](https://www.betrybe.com). Backend desenvolvido por mim e previmante Frntend pronto.
 fora adicionado, ao frontend, páginas responsivas para aparelhos com tela de até 500px, por ora (ainda em desenvolvimento).
 
