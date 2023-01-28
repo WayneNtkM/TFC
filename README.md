@@ -4,6 +4,8 @@
     <img src='assets/to_readme/tfc.gif' />
 </p>
 
+---
+
 ## Descrição
 
 Projeto fullstack Dockerizado realizado durante o curso da [Trybe](https://www.betrybe.com). Backend desenvolvido por mim e previmante Frntend pronto.
