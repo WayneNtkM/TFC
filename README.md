@@ -8,12 +8,11 @@
 
 ## Descrição
 
-Projeto fullstack Dockerizado realizado durante o curso da [Trybe](https://www.betrybe.com). Backend desenvolvido por mim e previmante Frntend pronto.
-fora adicionado, ao frontend, páginas responsivas para aparelhos com tela de até 500px, por ora (ainda em desenvolvimento).
+Projeto FullStack Dockerizado realizado durante o curso da Trybe. Backend desenvolvido por mim, com o Frontend já desenvolvido. fora adicionado, ao frontend, páginas responsivas para aparelhos com tela de até 500px, por ora (ainda em desenvolvimento).
 
 ## Objetivo
 
-É possível ao usuário fazer login, verificar as partidas e a classificação dos times. Além de ser possivél adicionar, terminar e modificar o placar de partidas.
+É possível ao usuário fazer login, verificar as partidas e a classificação dos times. Além de ser possível adicionar, terminar e modificar o placar de partidas.
 
 ## Tecnologias e Frameworks
 
